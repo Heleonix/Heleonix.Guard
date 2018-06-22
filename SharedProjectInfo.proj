@@ -1,0 +1,25 @@
+<Project>
+  <PropertyGroup>
+    <Version>1.0.0</Version>
+    <PackageReleaseNotes>Split from the Heleonix.Utilities</PackageReleaseNotes>
+
+    <Description>Provides performant guard functionality for methods to throw exceptions</Description>
+    <PackageTags>Heleonix guard throw codecontract</PackageTags>
+
+    <Authors>Heleonix - Hennadii Lutsyshyn</Authors>
+    <Copyright>Copyright (c) 2017-present Heleonix - Hennadii Lutsyshyn</Copyright>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/Heleonix/Heleonix.Guard</RepositoryUrl>
+    <PackageLicenseUrl>https://github.com/Heleonix/Heleonix.Guard/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/Heleonix/Heleonix.Guard</PackageProjectUrl>
+    <PackageIconUrl>https://s.gravatar.com/avatar/22d1d9391b9f682a589d324d403ec0d8?s=256</PackageIconUrl>
+
+    <IsPackable>true</IsPackable>
+    <IsTool>false</IsTool>
+    <IncludeSymbols>true</IncludeSymbols>
+    <IncludeSource>false</IncludeSource>
+    <NoPackageAnalysis>true</NoPackageAnalysis>
+  </PropertyGroup>
+</Project>
