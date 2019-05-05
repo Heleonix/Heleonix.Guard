@@ -10,11 +10,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitignore = .gitignore
 		LICENSE = LICENSE
 		README.md = README.md
-		SharedProjectInfo.proj = SharedProjectInfo.proj
+		SharedProjectInfo.props = SharedProjectInfo.props
 		stylecop.json = stylecop.json
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Heleonix.Guard.Tests", "Heleonix.Guard.Tests\Heleonix.Guard.Tests.csproj", "{B35408E2-D592-4157-997A-21611F54D54D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Heleonix.Guard.Tests", "Heleonix.Guard.Tests\Heleonix.Guard.Tests.csproj", "{B35408E2-D592-4157-997A-21611F54D54D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sources", "Sources", "{412A5D12-9FA9-4FC3-B9CC-5B7042B3DED6}"
 EndProject
@@ -30,10 +30,6 @@ Global
 		{B744C864-3D66-4CCA-82DD-E9BD2B92036F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B744C864-3D66-4CCA-82DD-E9BD2B92036F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B744C864-3D66-4CCA-82DD-E9BD2B92036F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9AB12922-D9CA-498C-BC8D-39B6B88F55DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9AB12922-D9CA-498C-BC8D-39B6B88F55DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9AB12922-D9CA-498C-BC8D-39B6B88F55DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9AB12922-D9CA-498C-BC8D-39B6B88F55DA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B35408E2-D592-4157-997A-21611F54D54D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B35408E2-D592-4157-997A-21611F54D54D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B35408E2-D592-4157-997A-21611F54D54D}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -44,7 +40,6 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{B744C864-3D66-4CCA-82DD-E9BD2B92036F} = {412A5D12-9FA9-4FC3-B9CC-5B7042B3DED6}
-		{9AB12922-D9CA-498C-BC8D-39B6B88F55DA} = {EAC2C115-3FA8-481B-9A34-F9058125539E}
 		{B35408E2-D592-4157-997A-21611F54D54D} = {EAC2C115-3FA8-481B-9A34-F9058125539E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution

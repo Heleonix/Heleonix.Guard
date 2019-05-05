@@ -1,5 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <Import Project="../SharedProjectInfo.proj" />
+  <Import Project="../SharedProjectInfo.props" />
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;netstandard1.6;net45;net451;net452;net46;net461;net462</TargetFrameworks>
