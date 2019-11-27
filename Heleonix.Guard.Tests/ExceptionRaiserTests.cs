@@ -23,7 +23,7 @@ namespace Heleonix.Guard.Tests
     public static class ExceptionRaiserTests
     {
         /// <summary>
-        /// Tests all the exceptions having constructors <see cref="Exception.Exception(string, Exception)"/>
+        /// Tests all the exceptions having constructors <see cref="Exception.Exception(string, Exception)"/>.
         /// </summary>
         [MemberTest(Name = nameof(Exception) + "(string, Exception)")]
         public static void Exception()
@@ -110,7 +110,7 @@ namespace Heleonix.Guard.Tests
         }
 
         /// <summary>
-        /// Tests all the exceptions having constructors <see cref="MissingFieldException.MissingFieldException(string, string)"/>
+        /// Tests all the exceptions having constructors <see cref="MissingFieldException.MissingFieldException(string, string)"/>.
         /// </summary>
         [MemberTest(Name = nameof(Exception) + "(string, string)")]
         public static void Exception2()
@@ -201,7 +201,7 @@ namespace Heleonix.Guard.Tests
         }
 
         /// <summary>
-        /// Tests all the exceptions having constructors <see cref="FileLoadException.FileLoadException(string, string, Exception)"/>
+        /// Tests all the exceptions having constructors <see cref="FileLoadException.FileLoadException(string, string, Exception)"/>.
         /// </summary>
         [MemberTest(Name = nameof(Exception) + "(string, string, Exception)")]
         public static void Exception3()
