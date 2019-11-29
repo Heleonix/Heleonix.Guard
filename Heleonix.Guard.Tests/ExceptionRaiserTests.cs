@@ -11,6 +11,8 @@ namespace Heleonix.Guard.Tests
     using System.IO;
     using System.Linq;
     using System.Reflection;
+    using System.Threading;
+    using System.Threading.Tasks;
     using Heleonix.Guard;
     using Heleonix.Testing.NUnit.Aaa;
     using NUnit.Framework;
@@ -303,6 +305,255 @@ namespace Heleonix.Guard.Tests
                                     }
                                 });
                             });
+                        });
+                    });
+                });
+            });
+        }
+
+        /// <summary>
+        /// Tests the <see cref="ExceptionRaiser.TaskCanceledException(bool, Task)"/>.
+        /// </summary>
+        [MemberTest(Name = nameof(ExceptionRaiser.TaskCanceledException) + "(bool, Task)")]
+        public static void TaskCanceledException()
+        {
+            var when = false;
+            TaskCanceledException thrownException = null;
+
+            When("exception raiser is executed", () =>
+            {
+                Act(() =>
+                {
+                    try
+                    {
+                        using (var task = new Task(() => { }))
+                        {
+                            task.Start();
+                            task.Wait();
+
+                            Host.Throw.TaskCanceledException(when, task);
+                        }
+                    }
+                    catch (TaskCanceledException e)
+                    {
+                        thrownException = e;
+                    }
+                });
+
+                And("a 'when' parameter is false", () =>
+                {
+                    when = false;
+
+                    Should("not throw any exception", () =>
+                    {
+                        Assert.That(thrownException, Is.Null);
+                    });
+                });
+
+                And("a 'when' parameter is true", () =>
+                {
+                    when = true;
+
+                    Should("throw the tested exception", () =>
+                    {
+                        Assert.That(thrownException, Is.InstanceOf<TaskCanceledException>());
+                    });
+                });
+            });
+        }
+
+        /// <summary>
+        /// Tests the <see cref="ExceptionRaiser.InvalidCastException(bool, string, int)"/>.
+        /// </summary>
+        [MemberTest(Name = nameof(ExceptionRaiser.InvalidCastException) + "(bool, string, int)")]
+        public static void InvalidCastException()
+        {
+            var when = false;
+            InvalidCastException thrownException = null;
+
+            When("exception raiser is executed", () =>
+            {
+                Act(() =>
+                {
+                    try
+                    {
+                        Host.Throw.InvalidCastException(when, "message", 1);
+                    }
+                    catch (InvalidCastException e)
+                    {
+                        thrownException = e;
+                    }
+                });
+
+                And("a 'when' parameter is false", () =>
+                {
+                    when = false;
+
+                    Should("not throw any exception", () =>
+                    {
+                        Assert.That(thrownException, Is.Null);
+                    });
+                });
+
+                And("a 'when' parameter is true", () =>
+                {
+                    when = true;
+
+                    Should("throw the tested exception", () =>
+                    {
+                        Assert.That(thrownException, Is.InstanceOf<InvalidCastException>());
+                    });
+                });
+            });
+        }
+
+        /// <summary>
+        /// Tests the <see cref="ExceptionRaiser.ArgumentOutOfRangeException(bool, string, object, string)"/>.
+        /// </summary>
+        [MemberTest(Name = nameof(ExceptionRaiser.ArgumentOutOfRangeException) + "(bool, string, object, string)")]
+        public static void ArgumentOutOfRangeException()
+        {
+            var when = false;
+            ArgumentOutOfRangeException thrownException = null;
+
+            When("exception raiser is executed", () =>
+            {
+                Act(() =>
+                {
+                    try
+                    {
+                        Host.Throw.ArgumentOutOfRangeException(when, "param1", 123, "message");
+                    }
+                    catch (ArgumentOutOfRangeException e)
+                    {
+                        thrownException = e;
+                    }
+                });
+
+                And("a 'when' parameter is false", () =>
+                {
+                    when = false;
+
+                    Should("not throw any exception", () =>
+                    {
+                        Assert.That(thrownException, Is.Null);
+                    });
+                });
+
+                And("a 'when' parameter is true", () =>
+                {
+                    when = true;
+
+                    Should("throw the tested exception", () =>
+                    {
+                        Assert.That(thrownException, Is.InstanceOf<ArgumentOutOfRangeException>());
+                    });
+                });
+            });
+        }
+
+        /// <summary>
+        /// Tests the <see cref="ExceptionRaiser.AggregateException(bool, string, Exception[])"/>.
+        /// </summary>
+        [MemberTest(Name = nameof(ExceptionRaiser.AggregateException) + "(bool, string, Exception[])")]
+        public static void AggregateException()
+        {
+            var when = false;
+            AggregateException thrownException = null;
+
+            When("exception raiser is executed", () =>
+            {
+                Act(() =>
+                {
+                    try
+                    {
+                        Host.Throw.AggregateException(when, "param1", new Exception[] { new Exception() });
+                    }
+                    catch (AggregateException e)
+                    {
+                        thrownException = e;
+                    }
+                });
+
+                And("a 'when' parameter is false", () =>
+                {
+                    when = false;
+
+                    Should("not throw any exception", () =>
+                    {
+                        Assert.That(thrownException, Is.Null);
+                    });
+                });
+
+                And("a 'when' parameter is true", () =>
+                {
+                    when = true;
+
+                    Should("throw the tested exception", () =>
+                    {
+                        Assert.That(thrownException, Is.InstanceOf<AggregateException>());
+                    });
+                });
+            });
+        }
+
+        /// <summary>
+        /// Tests the <see cref="ExceptionRaiser.OperationCanceledException(bool, string, Exception, CancellationToken?)"/>.
+        /// </summary>
+        [MemberTest(Name = nameof(ExceptionRaiser.OperationCanceledException) + "(bool, string, Exception, CancellationToken?)")]
+        public static void OperationCanceledException()
+        {
+            var when = false;
+            OperationCanceledException thrownException = null;
+            CancellationToken? cancellationToken = null;
+
+            When("exception raiser is executed", () =>
+            {
+                Act(() =>
+                {
+                    try
+                    {
+                        Host.Throw.OperationCanceledException(when, "message", new Exception(), cancellationToken);
+                    }
+                    catch (OperationCanceledException e)
+                    {
+                        thrownException = e;
+                    }
+                });
+
+                And("a 'when' parameter is false", () =>
+                {
+                    when = false;
+
+                    Should("not throw any exception", () =>
+                    {
+                        Assert.That(thrownException, Is.Null);
+                    });
+                });
+
+                And("a 'when' parameter is true", () =>
+                {
+                    when = true;
+
+                    And("a cancellation token is not provided", () =>
+                    {
+                        cancellationToken = null;
+
+                        Should("throw the tested exception with CancellationToken.None", () =>
+                        {
+                            Assert.That(thrownException, Is.InstanceOf<OperationCanceledException>());
+                            Assert.That(thrownException.CancellationToken, Is.EqualTo(CancellationToken.None));
+                        });
+                    });
+
+                    And("a cancellation token is provided", () =>
+                    {
+                        cancellationToken = new CancellationToken(true);
+
+                        Should("throw the tested exception with the provided cancellation token", () =>
+                        {
+                            Assert.That(thrownException, Is.InstanceOf<OperationCanceledException>());
+                            Assert.That(thrownException.CancellationToken, Is.EqualTo(cancellationToken));
                         });
                     });
                 });

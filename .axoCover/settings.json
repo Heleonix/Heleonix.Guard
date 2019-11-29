@@ -1,0 +1,19 @@
+{
+  "TestRunner": "",
+  "TestPlatform": "x86",
+  "TestApartmentState": "STA",
+  "TestAdapterMode": "Standard",
+  "IsRedirectingFrameworkAssemblies": true,
+  "TestSettings": "",
+  "ExcludeAttributes": "System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute",
+  "ExcludeFiles": "",
+  "ExcludeDirectories": "",
+  "Filters": "",
+  "IsIncludingSolutionAssemblies": true,
+  "IsExcludingTestAssemblies": true,
+  "IsCoveringByTest": false,
+  "IsMergingByHash": true,
+  "IsSkippingAutoProps": true,
+  "IsVisitorCountLimited": false,
+  "VisitorCountLimit": 10
+}
