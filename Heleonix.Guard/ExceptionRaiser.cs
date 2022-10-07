@@ -1,5 +1,5 @@
 ﻿// <copyright file="ExceptionRaiser.cs" company="Heleonix - Hennadii Lutsyshyn">
-// Copyright (c) 2017-present Heleonix - Hennadii Lutsyshyn. All rights reserved.
+// Copyright (c) Heleonix - Hennadii Lutsyshyn. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the repository root for full license information.
 // </copyright>
 
@@ -149,20 +149,6 @@ namespace Heleonix.Guard
             if (when)
             {
                 throw new AggregateException(message, innerExceptions);
-            }
-        }
-
-        /// <summary>
-        /// Raises the <see cref="System.MissingMemberException"/>.
-        /// </summary>
-        /// <param name="when">A condition to throw the exception.</param>
-        /// <param name="message">The message.</param>
-        /// <param name="innerException">The inner exception.</param>
-        public void MissingMemberException(bool when, string message, Exception innerException)
-        {
-            if (when)
-            {
-                throw new MissingMemberException(message, innerException);
             }
         }
 
@@ -450,34 +436,6 @@ namespace Heleonix.Guard
         }
 
         /// <summary>
-        /// Raises the <see cref="System.MissingFieldException"/>.
-        /// </summary>
-        /// <param name="when">A condition to throw the exception.</param>
-        /// <param name="message">The message.</param>
-        /// <param name="innerException">The inner exception.</param>
-        public void MissingFieldException(bool when, string message = null, Exception innerException = null)
-        {
-            if (when)
-            {
-                throw new MissingFieldException(message, innerException);
-            }
-        }
-
-        /// <summary>
-        /// Raises the <see cref="System.MissingMethodException"/>.
-        /// </summary>
-        /// <param name="when">A condition to throw the exception.</param>
-        /// <param name="message">The message.</param>
-        /// <param name="innerException">The inner exception.</param>
-        public void MissingMethodException(bool when, string message = null, Exception innerException = null)
-        {
-            if (when)
-            {
-                throw new MissingMethodException(message, innerException);
-            }
-        }
-
-        /// <summary>
         /// Raises the <see cref="PathTooLongException"/>.
         /// </summary>
         /// <param name="when">A condition to throw the exception.</param>
@@ -510,7 +468,6 @@ namespace Heleonix.Guard
             }
         }
 
-#if !NETSTANDARD1_6
         /// <summary>
         /// Raises the <see cref="System.MissingMemberException"/>.
         /// </summary>
@@ -522,6 +479,20 @@ namespace Heleonix.Guard
             if (when)
             {
                 throw new MissingMemberException(className, memberName);
+            }
+        }
+
+        /// <summary>
+        /// Raises the <see cref="System.MissingMemberException"/>.
+        /// </summary>
+        /// <param name="when">A condition to throw the exception.</param>
+        /// <param name="message">The message.</param>
+        /// <param name="innerException">The inner exception.</param>
+        public void MissingMemberException(bool when, string message, Exception innerException)
+        {
+            if (when)
+            {
+                throw new MissingMemberException(message, innerException);
             }
         }
 
@@ -540,6 +511,20 @@ namespace Heleonix.Guard
         }
 
         /// <summary>
+        /// Raises the <see cref="System.MissingFieldException"/>.
+        /// </summary>
+        /// <param name="when">A condition to throw the exception.</param>
+        /// <param name="message">The message.</param>
+        /// <param name="innerException">The inner exception.</param>
+        public void MissingFieldException(bool when, string message = null, Exception innerException = null)
+        {
+            if (when)
+            {
+                throw new MissingFieldException(message, innerException);
+            }
+        }
+
+        /// <summary>
         /// Raises the <see cref="System.MissingMethodException"/>.
         /// </summary>
         /// <param name="when">A condition to throw the exception.</param>
@@ -550,6 +535,20 @@ namespace Heleonix.Guard
             if (when)
             {
                 throw new MissingMethodException(className, methodName);
+            }
+        }
+
+        /// <summary>
+        /// Raises the <see cref="System.MissingMethodException"/>.
+        /// </summary>
+        /// <param name="when">A condition to throw the exception.</param>
+        /// <param name="message">The message.</param>
+        /// <param name="innerException">The inner exception.</param>
+        public void MissingMethodException(bool when, string message = null, Exception innerException = null)
+        {
+            if (when)
+            {
+                throw new MissingMethodException(message, innerException);
             }
         }
 
@@ -608,7 +607,6 @@ namespace Heleonix.Guard
                 throw new SerializationException(message, innerException);
             }
         }
-#endif
 #pragma warning restore CA1822 // Mark members as static
 #pragma warning restore CC0091 // Use static method
     }
