@@ -40,7 +40,7 @@ namespace Heleonix.Guard.Tests
             {
                 exceptionRaisers = from methodInfo in typeof(ExceptionRaiser).GetMethods()
                                    let parameters = methodInfo.GetParameters()
-                                   where parameters.Count() == 3
+                                   where parameters.Length == 3
                                        && parameters[0].ParameterType == typeof(bool)
                                        && parameters[1].ParameterType == typeof(string)
                                        && parameters[2].ParameterType == typeof(Exception)
@@ -127,7 +127,7 @@ namespace Heleonix.Guard.Tests
             {
                 exceptionRaisers = from methodInfo in typeof(ExceptionRaiser).GetMethods()
                                    let parameters = methodInfo.GetParameters()
-                                   where parameters.Count() == 3
+                                   where parameters.Length == 3
                                        && parameters[0].ParameterType == typeof(bool)
                                        && parameters[1].ParameterType == typeof(string)
                                        && parameters[2].ParameterType == typeof(string)
@@ -219,7 +219,7 @@ namespace Heleonix.Guard.Tests
             {
                 exceptionRaisers = from methodInfo in typeof(ExceptionRaiser).GetMethods()
                                    let parameters = methodInfo.GetParameters()
-                                   where parameters.Count() == 4
+                                   where parameters.Length == 4
                                        && parameters[0].ParameterType == typeof(bool)
                                        && parameters[1].ParameterType == typeof(string)
                                        && parameters[2].ParameterType == typeof(string)
@@ -467,7 +467,7 @@ namespace Heleonix.Guard.Tests
                 {
                     try
                     {
-                        Host.Throw.AggregateException(when, "param1", new Exception[] { new Exception() });
+                        Host.Throw.AggregateException(when, "param1", new Exception());
                     }
                     catch (AggregateException e)
                     {
