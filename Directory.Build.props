@@ -1,0 +1,47 @@
+<Project>
+  <PropertyGroup>
+    <Version>1.0.0</Version>
+    <Description>Provides performant guard functionality for methods to throw exceptions</Description>
+    <PackageTags>Heleonix guard throw codecontract</PackageTags>
+
+    <Authors>Heleonix - Hennadii Lutsyshyn</Authors>
+    <Copyright>Copyright (c) Heleonix - Hennadii Lutsyshyn</Copyright>
+
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/Heleonix/Heleonix.Guard</RepositoryUrl>
+    <PackageProjectUrl>https://heleonix.github.io/docs/Heleonix.Guard/</PackageProjectUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/Heleonix/docs/master/images/heleonix-logos/Heleonix-logo-128x128.jpg</PackageIconUrl>
+
+    <NoWarn>NU5048</NoWarn>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\LICENSE" Pack="true" PackagePath="/"/>
+    <None Include="..\..\README.md" Pack="true" PackagePath="/"/>
+  </ItemGroup>
+
+  <PropertyGroup>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <SatelliteResourceLanguages>en-US</SatelliteResourceLanguages>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\stylecop.json" Link="stylecop.json" />
+  </ItemGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+</Project>
